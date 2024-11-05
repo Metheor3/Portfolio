@@ -1,0 +1,143 @@
+h1{
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    padding: 20px;
+}
+
+body{
+    background-image: url(abstract-blue-light-pipe-speed-zoom-black-background-technology_1142-8392.avif);
+    background-size: cover;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    line-height: 1.6; 
+}
+
+.general{
+    display: flex;
+    margin: 0 auto;
+}
+
+.about-me:hover,.project:hover {
+    background-color: #0d407a;
+}
+
+.about-me {
+    background-color: #000;
+    margin: 10px;
+    border-radius: 10%;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    line-height: 2.6; 
+    font-size: 20px;
+}
+
+.about-me img {
+    border: 3px solid rgb(236, 236, 236);
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-right: 40px;
+}
+
+.about-text {
+    color: #fff;
+}
+
+.about-text h2 {
+    margin-bottom: 20px;
+}
+
+.projects {
+    background-color: #000;
+    margin: 10px;
+    border-radius: 10%;
+    padding: 20px;
+    width: 100%;
+}
+
+.project {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px 5px 10px ;
+}
+
+.project img {
+    border: 3px solid rgb(236, 236, 236);
+    border-radius: 15%;
+    width: 200px;
+    height: 150px;
+    margin-right: 40px;
+}
+
+.project-text {
+    color: #fff;
+}
+
+.project-text h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+p{
+    margin: 25px;
+    color: #fff;
+}
+
+.titre{
+    font-size: 20px;
+    color: #00ffff;
+}
+
+.welcome {
+    text-align: center;
+    padding: 20px 0;
+    background-color: rgba(128, 128, 128, 0.8);
+    border-radius: 10%;
+    max-width: 100%; /* Ajoutez une valeur qui convient à votre mise en page */
+}
+
+a,
+button {
+    background-color: #007e7e;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+a:hover,
+button:hover {
+    background-color: #0057b8;
+    transform: scale(1.05);
+}
+
+@media screen and (max-width : 768px){
+    .general{
+        flex-direction: column;
+    }
+    .about-me {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .about-me img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .project {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .project img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
