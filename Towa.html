@@ -2,55 +2,146 @@
 <html lang="fr">
 
 <head>
-    <title>Jeu de tours</title>
-    <link rel="stylesheet" href="projet.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de Tours</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #1a202c;
+            color: #edf2f7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-in {
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .btn-flottant {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #2d3748;
+            color: #edf2f7;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-flottant:hover {
+            background-color: #4a5568;
+            transform: scale(1.1);
+        }
+
+        .section-title {
+            position: relative;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: #718096;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
 </head>
 
-<body>
-    <h1>Jeu de tours</h1>
-    <div class="general">
-        <div class="boite cahier-des-charges">
-            <i class="fas fa-clipboard-list fa-2x"></i>
-            <h2>Cahier des Charges</h2>
-            <ul>
-                <li>Création d'un jeu de plateau (Java)</li>
-                <ul>
-                    <li> - Création d'un plateau 16*16 cases, un jeu 1 contre 1 ou chacun pose 1 tour par tour.</li>
-                    <li> - Implémentation des 22 règles</li>
-                    <li> - Création de deux IA performantes avec un algorithme different</li>
+<body class="bg-gray-900">
+    <!-- Header Section -->
+    <header class="bg-gray-800 py-12 text-center fade-in">
+        <h1 class="text-5xl font-bold">Jeu de Tours</h1>
+        <p class="text-lg mt-2 text-gray-400">Création d'un jeu de plateau 1 contre 1.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto py-16 px-4">
+        <!-- Cahier des Charges Section -->
+        <section class="fade-in mb-16">
+            <h2 class="section-title text-gray-300">Cahier des Charges</h2>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <ul class="space-y-3">
+                    <li>Création d'un jeu de plateau en Java :</li>
+                    <ul class="pl-6 list-disc text-gray-400">
+                        <li>Plateau de 16x16 cases</li>
+                        <li>Un jeu 1 contre 1 où chaque joueur pose une tour à tour</li>
+                        <li>Implémentation des 22 règles</li>
+                        <li>Création de deux IA performantes avec des algorithmes différents</li>
+                    </ul>
                 </ul>
-            </ul>           
-            <img src="towa.png " alt="Jeu de plateau">
-        </div>
-        <div class="boite methodes-choisies">
-            <i class="fas fa-tools fa-2x"></i>
-            <h2>Méthodes Choisies</h2>
-            <ul>
-                <li> Utilisation de Java
-                <ul>
-                    <li> - Création des regles du jeu </li>
-                    <li> - Création de tests unitaires pour verifier l'implementation des règles du jeu </li>
-                    <li> - Algorithme de L'IA 1 par comparaisons de toutes les actions possibles</li>
-                    <li> - Algorithme de L'IA 2 par visualisation du plateau </li>
+                <div class="mt-6 text-center">
+                    <img src="towa.png" alt="Jeu de plateau" class="w-full h-auto rounded-md shadow-lg">
+                </div>
+            </div>
+        </section>
+
+        <!-- Méthodes Choisies Section -->
+        <section class="slide-in mb-16">
+            <h2 class="section-title text-gray-300">Méthodes Choisies</h2>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <ul class="space-y-3">
+                    <li>Développement avec Java :</li>
+                    <ul class="pl-6 list-disc text-gray-400">
+                        <li>Création des règles du jeu</li>
+                        <li>Tests unitaires pour vérifier l'implémentation des règles</li>
+                        <li>Algorithme IA 1 : Comparaison de toutes les actions possibles</li>
+                        <li>Algorithme IA 2 : Visualisation du plateau</li>
+                    </ul>
                 </ul>
-            </ul>
-        </div>
-        <div class="boite competences">
-            <i class="fas fa-trophy fa-2x"></i>
-            <h2>Mes compétences</h2>
-            <ul>         
-                <li> - Utiliser et comprendre Java</li>
-                <li> - Developper une IA perfomante </li>
-                <li> - Développer des tests qui couvrent tous les cas d'utilisation pour garantir la qualité du jeu</li>
-            </ul>
-        </div>
-        
-        
-    </div>
-    <a href="index.html" class="btn-flottant">
-        <i class="fas fa-home"></i>
-    </a>  
+            </div>
+        </section>
+
+        <!-- Compétences Section -->
+        <section class="fade-in">
+            <h2 class="section-title text-gray-300">Mes Compétences</h2>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <ul class="pl-6 list-disc text-gray-400 space-y-2">
+                    <li>Utilisation avancée de Java</li>
+                    <li>Développement d'IA performantes</li>
+                    <li>Développement de tests pour garantir la qualité du jeu</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <a href="index.html" class="fixed bottom-5 right-5 bg-gray-800 text-white px-6 py-3 rounded-full shadow-lg flex items-center hover:bg-gray-700 transition duration-300 slide-in">
+        <i class="fas fa-home mr-2"></i>
+        Retour à l'accueil
+    </a>
 </body>
 
 </html>

@@ -2,55 +2,118 @@
 <html lang="fr">
 
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-image: url('bg.avif');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .project-img {
+            width: 100%;
+            height: 250px; 
+            object-fit: cover; 
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
 
-<body>
-    <div class="welcome">
-        <h1>Bienvenue sur mon Portfolio</h1>
-        <p>Je suis ravi de vous présenter mes projets et réalisations. N'hésitez pas à explorer et à me contacter pour plus d'informations.</p>
-    </div>
-    <div class="general">
-        <div class="about-me">
-            <div class="about-text">
-                <h2>À propos de moi :</h2>
-                <p>Je m'appelle Théo Chabane, j'ai 18 ans et je suis actuellement en deuxième année d'IUT informatique.
-                     Passionné par la technologie et le développement, je cherche constamment à améliorer mes compétences et à relever de nouveaux défis.
-                     J'aime particulièrement le développement d'applications, en particulier celles réalisées avec le langage Java.</p>
+<body class="text-gray-200 font-sans leading-relaxed">
+    <!-- Header Section -->
+    <header class="relative bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white py-20">
+        <div class="text-center fade-in">
+            <h1 class="text-5xl font-bold">Bienvenue sur mon Portfolio</h1>
+            <p class="mt-4 text-xl">Découvrez mes projets et réalisations</p>
+        </div>
+    </header>
+
+    <!-- About Me Section -->
+    <section class="bg-gray-800 text-gray-200 py-16 px-4 md:px-8">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <!-- Image Section -->
+            <div class="w-full md:w-1/2 fade-in">
+                <img src="theo.jpg" alt="Photo de Théo Chabane" 
+                    class="rounded-full shadow-lg border border-gray-700 w-60 h-60 object-cover">
+            </div>
+            <!-- Text Section -->
+            <div class="w-full md:w-1/2 text-center md:text-left fade-in">
+                <h2 class="text-3xl font-semibold mb-6 text-gray-100 border-b-2 border-gray-600 inline-block">À propos de moi</h2>
+                <p class="text-lg leading-relaxed mb-4">
+                    Je m'appelle <span class="font-medium text-gray-400">Théo Chabane</span>, j'ai 18 ans et je suis actuellement en deuxième année d'IUT informatique. Passionné par la technologie et le développement, je cherche constamment à améliorer mes compétences et à relever de nouveaux défis.
+                </p>
+                <p class="text-lg leading-relaxed">
+                    J'aime particulièrement le développement d'applications, notamment avec le langage <span class="font-medium text-gray-400">Java</span>. Mon objectif est d'apporter des solutions innovantes à des problèmes complexes.
+                </p>
             </div>
         </div>
-        
-        <div class="projects">
-            <h2><u>Mes projets</u></h2>
-            <div class="project">
-                <h3>Station météorologique personnelle</h3>
-                <p>Création d'une station météorologique personnelle en Java. Le projet comprend le stockage et l'affichage de données météorologiques.</p>
-                <a href="Station.html">En savoir plus</a>
-                <img src="Odomo.jpg" alt="Station météorologique">
+    </section>
+
+    <!-- Projects Section -->
+    <section class="bg-gray-900 py-16 px-4 md:px-8">
+        <h2 class="text-3xl font-semibold text-center mb-12 text-gray-200">Mes Projets</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <!-- Project Card 1 -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 fade-in project-card">
+                <img src="Odomo.jpg" alt="Station météorologique" class="project-img rounded-md mb-4">
+                <h3 class="text-xl font-medium mb-2 text-gray-300">Station météorologique personnelle</h3>
+                <p class="text-sm mb-4 text-gray-400">Création d'une station météorologique personnelle en Java. Le projet comprend le stockage et l'affichage de données météorologiques.</p>
+                <a href="Station.html" class="inline-block bg-gray-700 text-gray-200 px-4 py-2 rounded-md hover:bg-gray-600 transition duration-300">En savoir plus</a>
             </div>
-            <div class="project">
-                <h3>Client Mail</h3>
-                <p>Creation d'une interface permettant de se connecter a une boite mail avec le protocole POP3.</p>
-                <a href="clientMail.html">En savoir plus</a>
-                <img src="clientmail.png" alt="Client Mail">
+
+            <!-- Project Card 2 -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 fade-in project-card">
+                <img src="clientmail.png" alt="Client Mail" class="project-img rounded-md mb-4">
+                <h3 class="text-xl font-medium mb-2 text-gray-300">Client Mail</h3>
+                <p class="text-sm mb-4 text-gray-400">Création d'une interface permettant de se connecter à une boîte mail avec le protocole POP3.</p>
+                <a href="clientMail.html" class="inline-block bg-gray-700 text-gray-200 px-4 py-2 rounded-md hover:bg-gray-600 transition duration-300">En savoir plus</a>
             </div>
-            <div class="project">
-                <h3>Jeu de tour</h3>
-                <p>Création d'un jeu de plateau 16*16 cases, un jeu 1 contre 1 ou chacun pose 1 tour chacun leur tour avec des règles spécifiques.</p>
-                <a href="Towa.html">En savoir plus</a>
-                <img src="towa.png " alt="Jeu de plateau">
+
+            <!-- Project Card 3 -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 fade-in project-card">
+                <img src="towa.png" alt="Jeu de plateau" class="project-img rounded-md mb-4">
+                <h3 class="text-xl font-medium mb-2 text-gray-300">Jeu de tour</h3>
+                <p class="text-sm mb-4 text-gray-400">Création d'un jeu de plateau 16x16 cases, un jeu 1 contre 1 où chacun pose 1 tour chacun leur tour avec des règles spécifiques.</p>
+                <a href="Towa.html" class="inline-block bg-gray-700 text-gray-200 px-4 py-2 rounded-md hover:bg-gray-600 transition duration-300">En savoir plus</a>
             </div>
-            <div class="project">
-                <h3>NEmu</h3>
-                <p>Installation et configuration d'un serveur Nextcloud et Onlyoffice sur un réseau virtuel Debian, avec configuration de clients lourds et rédaction d'un tutoriel en Markdown</p>
-                <a href="NEmu.html">En savoir plus</a>
-                <img src="NEmu.jpg" alt="NEmu">
+
+            <!-- Project Card 4 -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 fade-in project-card">
+                <img src="NEmu.jpg" alt="NEmu" class="project-img rounded-md mb-4">
+                <h3 class="text-xl font-medium mb-2 text-gray-300">NEmu</h3>
+                <p class="text-sm mb-4 text-gray-400">Installation et configuration d'un serveur Nextcloud et Onlyoffice sur un réseau virtuel Debian, avec configuration de clients lourds et rédaction d'un tutoriel en Markdown.</p>
+                <a href="NEmu.html" class="inline-block bg-gray-700 text-gray-200 px-4 py-2 rounded-md hover:bg-gray-600 transition duration-300">En savoir plus</a>
             </div>
-            <!-- Ajoutez plus de projets ici -->
         </div>
-    </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="text-center py-6 bg-gray-800">
+        <p class="text-sm text-gray-400">&copy; 2025 Théo Chabane. Tous droits réservés.</p>
+    </footer>
 </body>
 
 </html>

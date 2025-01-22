@@ -2,51 +2,143 @@
 <html lang="fr">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Client Mail</title>
-    <link rel="stylesheet" href="projet.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #1a202c;
+            color: #edf2f7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-in {
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .btn-flottant {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #2d3748;
+            color: #edf2f7;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-flottant:hover {
+            background-color: #4a5568;
+            transform: scale(1.1);
+        }
+
+        .section-title {
+            position: relative;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: #718096;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
 </head>
 
-<body>
-    <h1>Client Mail</h1>
-    <div class="general">
-        <div class="boite cahier-des-charges">
-            <i class="fas fa-clipboard-list fa-2x"></i>
-            <h2>Cahier des Charges</h2>
-            <ul>
-                <li>Création d'une interface permettant de se connecter a une boite mail</li>
-                <ul>
-                    <li> - Utilisation du protocole POP3</li>
-                    <li> - Possibilité d'un affichage brut</li>
-                    <li> - Possibilité de choisir le mail à afficher et son mode d'affichage</li>
+<body class="bg-gray-900">
+    <!-- Header Section -->
+    <header class="bg-gray-800 py-12 text-center fade-in">
+        <h1 class="text-5xl font-bold">Client Mail</h1>
+        <p class="text-lg mt-2 text-gray-400">Découvrez les fonctionnalités et les compétences développées dans ce projet.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto py-16 px-4">
+        <!-- Cahier des Charges Section -->
+        <section class="fade-in mb-16">
+            <h2 class="section-title text-gray-300">Cahier des Charges</h2>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <ul class="space-y-3">
+                    <li>Création d'une interface permettant de se connecter à une boîte mail :</li>
+                    <ul class="pl-6 list-disc text-gray-400">
+                        <li>Utilisation du protocole POP3</li>
+                        <li>Possibilité d'un affichage brut</li>
+                        <li>Choix du mail à afficher et du mode d'affichage</li>
+                    </ul>
                 </ul>
-            </ul>           
-            <img src="clientmail.png" alt="Client Mail">
-        </div>
-        <div class="boite methodes-choisies">
-            <i class="fas fa-tools fa-2x"></i>
-            <h2>Méthodes Choisies</h2>
-            <ul>
-                <li>Création Client Mail
-                <ul>
-                    <li> - Utilisation du language C# et de WinForms</li>
-                    <li> - Envoies et reçues de requêtes par l'intermédiaire d'un terminal Linux</li>
+                <div class="mt-6 text-center">
+                    <img src="clientmail.png" alt="Client Mail" class="w-full h-auto rounded-md shadow-lg">
+                </div>
+            </div>
+        </section>
+
+        <!-- Méthodes Choisies Section -->
+        <section class="slide-in mb-16">
+            <h2 class="section-title text-gray-300">Méthodes Choisies</h2>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <ul class="space-y-3">
+                    <li>Développement avec le langage <span class="text-gray-200 font-medium">C#</span> et WinForms :</li>
+                    <ul class="pl-6 list-disc text-gray-400">
+                        <li>Création de l'interface utilisateur</li>
+                        <li>Gestion des requêtes via un terminal Linux</li>
+                    </ul>
                 </ul>
-            </ul>
-        </div>
-        <div class="boite competences">
-            <i class="fas fa-trophy fa-2x"></i>
-            <h2>Mes compétences</h2>
-            <ul>
-                <li> - Utiliser le protocole POP3</li>
-                <li> - Developper en C#</li>
-                <li> - Faire des algorithmes de recherches, des filtres</li>
-            </ul>
-        </div>       
-    </div>
-    <a href="index.html" class="btn-flottant">
-        <i class="fas fa-home"></i>
-    </a>  
+            </div>
+        </section>
+
+        <!-- Compétences Section -->
+        <section class="fade-in">
+            <h2 class="section-title text-gray-300">Mes Compétences</h2>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <ul class="pl-6 list-disc text-gray-400 space-y-2">
+                    <li>Maîtriser le protocole POP3 pour la gestion des emails</li>
+                    <li>Développer une application professionnelle en <span class="text-gray-200 font-medium">C#</span></li>
+                    <li>Implémenter des algorithmes de recherche et des filtres adaptés</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <a href="index.html" class="fixed bottom-5 right-5 bg-gray-800 text-white px-6 py-3 rounded-full shadow-lg flex items-center hover:bg-gray-700 transition duration-300 slide-in">
+        <i class="fas fa-home mr-2"></i>
+        Retour à l'accueil
+    </a>
 </body>
 
 </html>

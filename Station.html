@@ -2,53 +2,145 @@
 <html lang="fr">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Station Météorologique</title>
-    <link rel="stylesheet" href="projet.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #1a202c;
+            color: #edf2f7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-in {
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .btn-flottant {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #2d3748;
+            color: #edf2f7;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-flottant:hover {
+            background-color: #4a5568;
+            transform: scale(1.1);
+        }
+
+        .section-title {
+            position: relative;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: #718096;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
 </head>
 
-<body>
-    <h1>Station Météorologique</h1>
-    <div class="general">
-        <div class="boite cahier-des-charges">
-            <i class="fas fa-clipboard-list fa-2x"></i>
-            <h2>Cahier des Charges</h2>
-            <ul>
-                <li>Programmation d'une station météorologique personnelle (Java)</li>
-                <ul>
-                    <li> - Stockage et affichage de données météorologiques</li>
-                    <li> - Gestion d'une chaudière</li>
+<body class="bg-gray-900">
+    <!-- Header Section -->
+    <header class="bg-gray-800 py-12 text-center fade-in">
+        <h1 class="text-5xl font-bold">Station Météorologique</h1>
+        <p class="text-lg mt-2 text-gray-400">Programmation d'une station météorologique personnelle.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto py-16 px-4">
+        <!-- Cahier des Charges Section -->
+        <section class="fade-in mb-16">
+            <h2 class="section-title text-gray-300">Cahier des Charges</h2>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <ul class="space-y-3">
+                    <li>Programmation d'une station météorologique personnelle en Java :</li>
+                    <ul class="pl-6 list-disc text-gray-400">
+                        <li>Stockage et affichage des données météorologiques</li>
+                        <li>Gestion d'une chaudière</li>
+                    </ul>
                 </ul>
-            </ul>           
-            <img src="Odomo.jpg" alt="Station météorologique">
-        </div>
-        <div class="boite methodes-choisies">
-            <i class="fas fa-tools fa-2x"></i>
-            <h2>Méthodes Choisies</h2>
-            <ul>
-                <li>Affichage des Données
-                <ul>
-                    <li> - Tableau 2D (Matrice) : Création d'un tableau 2D pour afficher les données météo</li>
-                    <li> - Algorithme d'Activation : Écriture d'un algorithme pour activer des cases dans la matrice 2D, représentant des plages d'activité (jours et heures)</li>
+                <div class="mt-6 text-center">
+                    <img src="Odomo.jpg" alt="Station météorologique" class="w-full h-auto rounded-md shadow-lg">
+                </div>
+            </div>
+        </section>
+
+        <!-- Méthodes Choisies Section -->
+        <section class="slide-in mb-16">
+            <h2 class="section-title text-gray-300">Méthodes Choisies</h2>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <ul class="space-y-3">
+                    <li>Affichage des Données :</li>
+                    <ul class="pl-6 list-disc text-gray-400">
+                        <li>Tableau 2D (Matrice) : Création d'un tableau pour visualiser les données météo</li>
+                        <li>Algorithme d'Activation : Activation de plages horaires spécifiques dans la matrice</li>
+                    </ul>
                 </ul>
-            </ul>
-        </div>
-        <div class="boite competences">
-            <i class="fas fa-trophy fa-2x"></i>
-            <h2>Mes compétences</h2>
-            <ul>
-                <li> - Commenter le code de façon détaillée pour une meilleure compréhension</li>
-                <li> - Expliquer clairement la structure et le fonctionnement du code</li>
-                <li> - Développer des tests qui couvrent tous les cas d'utilisation pour garantir la qualité du logiciel</li>
-                <li> - Améliorer l'interface utilisateur en mode texte pour une expérience utilisateur plus agréable</li>
-                <li> - Planifier efficacement le temps pour chaque étape du projet pour une livraison dans les délais</li>
-                <li> - Effectuer des révisions de code régulières pour identifier et corriger rapidement les erreurs</li>
-            </ul>
-        </div>              
-    </div>
-    <a href="index.html" class="btn-flottant">
-        <i class="fas fa-home"></i>
-    </a>      
+            </div>
+        </section>
+
+        <!-- Compétences Section -->
+        <section class="fade-in">
+            <h2 class="section-title text-gray-300">Mes Compétences</h2>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <ul class="pl-6 list-disc text-gray-400 space-y-2">
+                    <li>Commenter le code de façon détaillée pour une meilleure compréhension</li>
+                    <li>Expliquer clairement la structure et le fonctionnement du code</li>
+                    <li>Développer des tests couvrant tous les cas d'utilisation pour garantir la qualité</li>
+                    <li>Améliorer l'interface utilisateur texte pour une expérience utilisateur optimale</li>
+                    <li>Planifier efficacement chaque étape du projet</li>
+                    <li>Effectuer des révisions régulières pour identifier et corriger rapidement les erreurs</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <a href="index.html" class="fixed bottom-5 right-5 bg-gray-800 text-white px-6 py-3 rounded-full shadow-lg flex items-center hover:bg-gray-700 transition duration-300 slide-in">
+        <i class="fas fa-home mr-2"></i>
+        Retour à l'accueil
+    </a>
 </body>
 
 </html>
