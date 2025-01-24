@@ -54,6 +54,12 @@
             background-color: #374151;
             border-radius: 5px;
         }
+
+        /* Enlever la bordure ou ombre sous le menu */
+        nav {
+            border-bottom: none; /* Supprime toute bordure sous le menu */
+            box-shadow: none; /* Supprime l'ombre portée sous le menu */
+        }
     </style>
 </head>
 
@@ -160,7 +166,26 @@
                 <a href="Towa.html"
                     class="inline-block bg-gray-700 text-gray-200 px-4 py-2 rounded-md hover:bg-gray-600 transition duration-300">En savoir plus</a>
             </div>
-            <!-- Autres projets restent inchangés... -->
+
+            <!-- Project Card 4 -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 fade-in project-card">
+                <img src="NEmu.jpg" alt="NEmu" class="project-img rounded-md mb-4">
+                <h3 class="text-xl font-medium mb-2 text-gray-300">NEmu</h3>
+                <p class="text-sm mb-4 text-gray-400">Installation et configuration d'un serveur Nextcloud et Onlyoffice sur
+                    un réseau virtuel Debian, avec configuration de clients lourds et rédaction d'un tutoriel en Markdown.</p>
+                <a href="NEmu.html"
+                    class="inline-block bg-gray-700 text-gray-200 px-4 py-2 rounded-md hover:bg-gray-600 transition duration-300">En savoir plus</a>
+            </div>
+
+            <!-- Project Card 5 -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 fade-in project-card">
+                <img src="siteChampionnat.png" alt="NEmu" class="project-img rounded-md mb-4">
+                <h3 class="text-xl font-medium mb-2 text-gray-300">Application web compétition de Football de Robots</h3>
+                <p class="text-sm mb-4 text-gray-400">Développement d'une application full-stack avec symfony.
+                    Savoir gérer un projet en s’appuyant sur la méthodologie Scrum</p>
+                <a href="Championnat.html"
+                    class="inline-block bg-gray-700 text-gray-200 px-4 py-2 rounded-md hover:bg-gray-600 transition duration-300">En savoir plus</a>
+            </div>
         </div>
     </section>
 
