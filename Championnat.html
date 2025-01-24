@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compétition de Football de Robots</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #1a202c;
+            color: #edf2f7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-in {
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .btn-flottant {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #2d3748;
+            color: #edf2f7;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-flottant:hover {
+            background-color: #4a5568;
+            transform: scale(1.1);
+        }
+
+        .section-title {
+            position: relative;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: #718096;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900">
+    <!-- Header Section -->
+    <header class="bg-gray-800 py-12 text-center fade-in">
+        <h1 class="text-5xl font-bold">Compétition de Football de Robots</h1>
+        <p class="text-lg mt-2 text-gray-400">Développement d'une application / méthodologie Scrum</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto py-16 px-4">
+        <!-- Cahier des Charges Section -->
+        <section class="fade-in mb-16">
+            <h2 class="section-title text-gray-300">Cahier des Charges</h2>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <ul class="space-y-3">
+                    <li>L'application est une Progressive Web App (PWA).</li>
+                    <li>Le framework Symfony est imposé pour le développement.</li>
+                    <li>Elle couvre toutes les étapes de la compétition :</li>
+                    <ul class="pl-6 list-disc text-gray-400">
+                        <li>Inscription des équipes.</li>
+                        <li>Organisation des rencontres.</li>
+                        <li>Publication des résultats.</li>
+                    </ul>
+                </ul>
+                <div class="mt-6 text-center">
+                    <img src="siteChampionnat.png" alt="Compétition de robots" class="w-full h-auto rounded-md shadow-lg">
+                </div>
+            </div>
+        </section>
+
+        <!-- Méthodes Choisies Section -->
+        <section class="slide-in mb-16">
+            <h2 class="section-title text-gray-300">Méthodes Choisies</h2>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <ul class="space-y-3">
+                    <li>
+                        <span class="text-gray-300 font-bold">Base de données :</span>
+                        Gestion avec Symfony et Doctrine. Les entités ont été créées et mises à jour directement dans Symfony.
+                    </li>
+                    <li>
+                        <span class="text-gray-300 font-bold">Back-End :</span>
+                        Développement des fonctionnalités principales en PHP avec Symfony, en respectant l'architecture MVC.
+                    </li>
+                    <li>
+                        <span class="text-gray-300 font-bold">Front-End :</span>
+                        Création des interfaces utilisateur avec les fichiers <code>.html.twig</code> fournis par Symfony, combinés à Tailwind CSS pour un design moderne et réactif.
+                    </li>
+                    <li>
+                        <span class="text-gray-300 font-bold">Méthodologie Agile :</span>
+                        Utilisation de Scrum avec des itérations courtes de 3 jours et deux réunions quotidiennes pour maintenir une bonne coordination.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Compétences Section -->
+        <section class="fade-in">
+            <h2 class="section-title text-gray-300">Mes Compétences</h2>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <ul class="pl-6 list-disc text-gray-400 space-y-2">
+                    <li>Développement d'applications avec Symfony.</li>
+                    <li>Gestion des bases de données relationnelles avec Doctrine.</li>
+                    <li>Création d'interfaces modernes avec Twig et Tailwind CSS.</li>
+                    <li>Collaboration en équipe avec des outils et méthodologies Agiles.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <a href="index.html" class="fixed bottom-5 right-5 bg-gray-800 text-white px-6 py-3 rounded-full shadow-lg flex items-center hover:bg-gray-700 transition duration-300 slide-in">
+        <i class="fas fa-home mr-2"></i>
+        Retour à l'accueil
+    </a>
+</body>
+
+</html>
